@@ -9,7 +9,24 @@
 	</modules>
 
 	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.11.0</version>
+				</plugin>
+			</plugins>
+
+		</pluginManagement>
+
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+			</plugin>
 			<!-- コンパイル設定 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -41,7 +58,22 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.1.2</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 	<dependencies>
 		<!-- ロガー -->
 		<dependency>
@@ -68,5 +100,6 @@
 			<version>3.17.2</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 </project>
